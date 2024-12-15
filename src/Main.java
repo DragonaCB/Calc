@@ -4,13 +4,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
+        sc.close();
         try {
             System.out.println(calc(input));
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
-        } finally {
-            sc.close();
-        }
+        } 
     }
 
     public static String calc(String input) {
