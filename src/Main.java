@@ -1,15 +1,16 @@
 import java.util.Scanner;
 
-public class Main {
+public class text1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
-        sc.close();
         try {
             System.out.println(calc(input));
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
-        } 
+        } finally {
+            sc.close();
+        }
     }
 
     public static String calc(String input) {
@@ -33,14 +34,27 @@ public class Main {
 
         if (arabic1) {
             num1 = Integer.parseInt(parts[0]);
+            if(num1 < 1 || num1 > 10) {
+            throw new IllegalArgumentException("throws Exception");}
+
         } else {
             num1 = romanToArabic(parts[0]);
+            if(num1 < 1 || num1 > 10){
+                throw new IllegalArgumentException("throws Exception");
+            }
+
         }
 
         if (arabic2) {
             num2 = Integer.parseInt(parts[2]);
+            if(num2 < 1 || num2 > 10){
+                throw new IllegalArgumentException("throws Exception");
+            }
         } else {
             num2 = romanToArabic(parts[2]);
+            if(num2 < 1 || num2 > 10){
+                throw new IllegalArgumentException("throws Exception");
+            }
         }
 
         int res;
