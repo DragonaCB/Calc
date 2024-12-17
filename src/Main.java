@@ -35,16 +35,14 @@ public class text1 {
         if (arabic1) {
             num1 = Integer.parseInt(parts[0]);
             if(num1 < 1 || num1 > 10) {
-            throw new IllegalArgumentException("throws Exception");}
-
+            throw new IllegalArgumentException("throws Exception");
+            }
         } else {
             num1 = romanToArabic(parts[0]);
             if(num1 < 1 || num1 > 10){
                 throw new IllegalArgumentException("throws Exception");
             }
-
         }
-
         if (arabic2) {
             num2 = Integer.parseInt(parts[2]);
             if(num2 < 1 || num2 > 10){
